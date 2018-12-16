@@ -6,7 +6,7 @@
 
         public Facilitador(string nomeFacilitador)
         {
-            throw new System.NotImplementedException();
+            Nome = nomeFacilitador;
         }
     }
 }
