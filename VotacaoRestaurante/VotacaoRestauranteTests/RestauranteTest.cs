@@ -10,7 +10,7 @@ namespace VotacaoRestauranteTests
         public void DeveCriarUmNovoRestauranteParaVotacao()
         {
             Restaurante restaurante = new Restaurante("Me Gusta");
-            Assert.AreEqual("Me Gusta", restaurante.Nome);
+            Assert.AreEqual("Me Gusta", restaurante.NomeRestaurante);
         }
     }
 }

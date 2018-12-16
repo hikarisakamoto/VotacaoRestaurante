@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VotacaoRestaurante
+﻿namespace VotacaoRestaurante
 {
-   public class Restaurante
+    public class Restaurante
     {
+        public Restaurante(string nomeRestaurante)
+        {
+            NomeRestaurante = nomeRestaurante;
+        }
+
+        public string NomeRestaurante { get; }
     }
 }
