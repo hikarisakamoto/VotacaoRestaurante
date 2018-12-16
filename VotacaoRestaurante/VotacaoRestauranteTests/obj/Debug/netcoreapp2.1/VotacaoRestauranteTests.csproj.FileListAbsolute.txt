@@ -1,0 +1,17 @@
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestauranteTests.deps.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestauranteTests.runtimeconfig.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestauranteTests.runtimeconfig.dev.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestauranteTests.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestauranteTests.pdb
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestaurante.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\bin\Debug\netcoreapp2.1\VotacaoRestaurante.pdb
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.csprojAssemblyReference.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.csproj.CoreCompileInputs.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.AssemblyInfoInputs.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.AssemblyInfo.cs
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.csproj.CopyComplete
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestauranteTests\obj\Debug\netcoreapp2.1\VotacaoRestauranteTests.pdb

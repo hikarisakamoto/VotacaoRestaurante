@@ -1,0 +1,11 @@
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\bin\Debug\netcoreapp2.1\VotacaoRestaurante.deps.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\bin\Debug\netcoreapp2.1\VotacaoRestaurante.runtimeconfig.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\bin\Debug\netcoreapp2.1\VotacaoRestaurante.runtimeconfig.dev.json
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\bin\Debug\netcoreapp2.1\VotacaoRestaurante.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\bin\Debug\netcoreapp2.1\VotacaoRestaurante.pdb
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.csprojAssemblyReference.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.csproj.CoreCompileInputs.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.AssemblyInfoInputs.cache
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.AssemblyInfo.cs
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.dll
+D:\OneDrive\Dev\Exams\VotacaoRestaurante\VotacaoRestaurante\VotacaoRestaurante\obj\Debug\netcoreapp2.1\VotacaoRestaurante.pdb
