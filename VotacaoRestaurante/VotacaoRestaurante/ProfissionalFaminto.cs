@@ -2,11 +2,11 @@
 {
     public class ProfissionalFaminto
     {
-        public string _nome { get; }
+        public string Nome { get; }
 
         public ProfissionalFaminto(string nome)
         {
-            _nome = nome;
+            Nome = nome;
         }
     }
 }

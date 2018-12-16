@@ -10,7 +10,7 @@ namespace VotacaoRestauranteTests
         public void DeveCriarUmNovoProfissionalFaminto()
         {
             ProfissionalFaminto profissionalFaminto = new ProfissionalFaminto("Hikari Sakamoto");
-            Assert.AreEqual("Hikari Sakamoto", profissionalFaminto._nome);
+            Assert.AreEqual("Hikari Sakamoto", profissionalFaminto.Nome);
         }
     }
 }
