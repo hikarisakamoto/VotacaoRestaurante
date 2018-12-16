@@ -13,6 +13,7 @@ namespace VotacaoRestauranteTests
         public void DeveCriarUmNovoFacilitador()
         {
             Facilitador facilitador = new Facilitador("Hikari Sakamoto");
+            Assert.AreEqual("Hikari Sakamoto", facilitador.Nome);
         }
     }
 }
