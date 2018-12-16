@@ -11,6 +11,7 @@ namespace VotacaoRestauranteTests
         {
             Restaurante restaurante = new Restaurante("Me Gusta");
             Assert.AreEqual("Me Gusta", restaurante.NomeRestaurante);
+            Assert.AreEqual(0, restaurante.NumeroVotos);
         }
     }
 }
