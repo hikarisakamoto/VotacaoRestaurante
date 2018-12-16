@@ -2,11 +2,11 @@
 {
     public class Restaurante
     {
-        public string NomeRestaurante { get; }
+        public string Nome { get; }
         public int NumeroVotos { get; }
-        public Restaurante(string nomeRestaurante)
+        public Restaurante(string nome)
         {
-            NomeRestaurante = nomeRestaurante;
+            Nome = nome;
             NumeroVotos = 0;
         }
     }
