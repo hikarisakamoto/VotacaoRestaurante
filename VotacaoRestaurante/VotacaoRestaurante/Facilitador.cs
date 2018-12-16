@@ -36,7 +36,7 @@ namespace VotacaoRestaurante
 
         public bool ReceberVotoParaRestaurante(ProfissionalFaminto profissionalFaminto, Restaurante restaurante)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
