@@ -8,6 +8,7 @@ namespace VotacaoRestauranteTests
     public class FacilitadorTest
     {
         private ProfissionalFaminto _profissional;
+        private ProfissionalFaminto _profissionalFaminto;
         private Facilitador _facilitador;
         private Restaurante _restaurante;
         private Restaurante _restaurante2;
@@ -16,6 +17,7 @@ namespace VotacaoRestauranteTests
         public void DevePrepararOsTestesParaOFacilitador()
         {
             _profissional = new ProfissionalFaminto("Hikari Sakamoto");
+            _profissionalFaminto= new ProfissionalFaminto("Raphaela Fonseca");
             _facilitador = new Facilitador(_profissional);
             _restaurante = new Restaurante("Me Gusta");
             _restaurante2 = new Restaurante("Madero");
@@ -23,26 +25,26 @@ namespace VotacaoRestauranteTests
         }
 
         [TestMethod]
-        public void DeveCriarUmFacilitador()
+        public void DeveTestarCriarUmFacilitador()
         {
             Assert.AreEqual(_profissional, _facilitador.ProfissionalFacilitador);
         }
 
         [TestMethod]
-        public void DeveReceberUmRestauranteParaCadastro()
+        public void DeveTestarReceberUmRestauranteParaCadastro()
         {
             _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante);
             Assert.AreEqual(1, _facilitador.QuantidadeRestaurantesCadastrados());
         }
 
         [TestMethod]
-        public void NaoDevePermitirCadastrarUmRestauranteJaCadastrado()
+        public void DeveTestarNaoPermitirCadastrarUmRestauranteJaCadastrado()
         {
             _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante);
             _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante2);
             Assert.ThrowsException<InvalidOperationException>(() => _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante));
         }
 
-
+      
     }
 }

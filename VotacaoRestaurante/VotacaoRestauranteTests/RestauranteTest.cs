@@ -6,12 +6,25 @@ namespace VotacaoRestauranteTests
     [TestClass]
     public class RestauranteTest
     {
+        private Restaurante restaurante;
+
+        [TestInitialize]
+        public void DevePrepararOsTestesParaORestaurante()
+        {
+            restaurante = new Restaurante("Me Gusta");
+        }
+
         [TestMethod]
         public void DeveCriarUmNovoRestauranteParaVotacao()
         {
-            Restaurante restaurante = new Restaurante("Me Gusta");
             Assert.AreEqual("Me Gusta", restaurante.Nome);
-            Assert.AreEqual(0, restaurante.NumeroVotos);
+        }
+
+        [TestMethod]
+        public void DeveAdicionarUmVotoParaUmRestaurante()
+        {
+            restaurante.AdicionarVoto();
+            Assert.AreEqual(1, restaurante.NumeroVotos);
         }
     }
 }

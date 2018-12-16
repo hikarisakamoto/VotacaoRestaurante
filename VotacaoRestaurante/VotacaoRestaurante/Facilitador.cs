@@ -7,30 +7,32 @@ namespace VotacaoRestaurante
     public class Facilitador
     {
         public ProfissionalFaminto ProfissionalFacilitador { get; }
-        private List<Restaurante> restaurantes;
+        private List<Restaurante> _restaurantes;
 
         public Facilitador(ProfissionalFaminto profissional)
         {
             ProfissionalFacilitador = profissional;
-            restaurantes = new List<Restaurante>();
+            _restaurantes = new List<Restaurante>();
         }
 
         public void AdicionarNovoRestauranteParaVoto(Restaurante restaurante)
         {
             ValidarRestauranteExisteNoCadastro(restaurante);
 
-            restaurantes.Add(restaurante);
+            _restaurantes.Add(restaurante);
         }
 
         private void ValidarRestauranteExisteNoCadastro(Restaurante restaurante)
         {
-            if (restaurantes.Count(restauranteNaLista => restauranteNaLista.Nome.Equals(restaurante.Nome)) > 0)
+            if (_restaurantes.Count(restauranteNaLista => restauranteNaLista.Nome.Equals(restaurante.Nome)) > 0)
                 throw new InvalidOperationException();
         }
 
         public int QuantidadeRestaurantesCadastrados()
         {
-            return restaurantes.Count;
+            return _restaurantes.Count;
         }
+
+       
     }
 }
