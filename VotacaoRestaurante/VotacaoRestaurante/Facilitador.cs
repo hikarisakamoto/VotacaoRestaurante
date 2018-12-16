@@ -1,4 +1,6 @@
-﻿namespace VotacaoRestaurante
+﻿using System.Collections.Generic;
+
+namespace VotacaoRestaurante
 {
     public class Facilitador
     {
@@ -9,5 +11,14 @@
             ProfissionalFacilitador = profissional;
         }
 
+        public void AdicionarNovoRestauranteParaVoto(Restaurante restaurante)
+        {
+            List<Restaurante> restaurantes = new List<Restaurante> { restaurante };
+        }
+
+        public int QuantidadeRestaurantesCadastrados()
+        {
+            return 1;
+        }
     }
 }
