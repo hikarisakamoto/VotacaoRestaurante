@@ -17,7 +17,7 @@ namespace VotacaoRestauranteTests
         public void DevePrepararOsTestesParaOFacilitador()
         {
             _profissional = new ProfissionalFaminto("Hikari Sakamoto");
-            _profissionalFaminto= new ProfissionalFaminto("Raphaela Fonseca");
+            _profissionalFaminto = new ProfissionalFaminto("Raphaela Fonseca");
             _facilitador = new Facilitador(_profissional);
             _restaurante = new Restaurante("Me Gusta");
             _restaurante2 = new Restaurante("Madero");
@@ -45,6 +45,11 @@ namespace VotacaoRestauranteTests
             Assert.ThrowsException<InvalidOperationException>(() => _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante));
         }
 
-      
+        [TestMethod]
+        public void DeveVotarEmUmRestauranteComSucesso()
+        {
+            Assert.AreEqual(true, _facilitador.ReceberVotoParaRestaurante(_profissionalFaminto, _restaurante));
+
+        }
     }
 }
