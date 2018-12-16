@@ -13,7 +13,7 @@
 
         public void AdicionarVoto()
         {
-            NumeroVotos = 1;
+            NumeroVotos++;
         }
     }
 }

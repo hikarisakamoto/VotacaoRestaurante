@@ -24,7 +24,8 @@ namespace VotacaoRestauranteTests
         public void DeveAdicionarUmVotoParaUmRestaurante()
         {
             restaurante.AdicionarVoto();
-            Assert.AreEqual(1, restaurante.NumeroVotos);
+            restaurante.AdicionarVoto();
+            Assert.AreEqual(2, restaurante.NumeroVotos);
         }
     }
 }
