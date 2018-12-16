@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestPlatform.TestHost;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VotacaoRestaurante;
 
 namespace VotacaoRestauranteTests
@@ -11,6 +10,7 @@ namespace VotacaoRestauranteTests
         public void DeveCriarUmNovoRestauranteParaVotacao()
         {
             Restaurante restaurante = new Restaurante("Me Gusta");
+            Assert.AreEqual("Me Gusta", restaurante.Nome);
         }
     }
 }
