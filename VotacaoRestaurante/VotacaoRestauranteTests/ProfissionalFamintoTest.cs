@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using VotacaoRestaurante;
 
 namespace VotacaoRestauranteTests
 {
@@ -8,8 +9,8 @@ namespace VotacaoRestauranteTests
         [TestMethod]
         public void DeveCriarUmNovoProfissionalFaminto()
         {
-            ProfissionalFamintoTest profissionalFaminto = new ProfissionalFamintoTest("Hikari Sakamoto");
-            Assert.AreEqual("Hikari Sakamoto", profissionalFaminto.Nome);
+            ProfissionalFaminto profissionalFaminto = new ProfissionalFaminto("Hikari Sakamoto");
+            Assert.AreEqual("Hikari Sakamoto", profissionalFaminto._nome);
         }
     }
 }
