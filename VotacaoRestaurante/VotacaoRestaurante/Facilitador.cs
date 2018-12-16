@@ -11,12 +11,12 @@
 
         public void AdicionarNovoRestaurante(string meGusta)
         {
-            throw new System.NotImplementedException();
+            return;
         }
 
         public int QuantidadeRestaurantesCadastrados()
         {
-            throw new System.NotImplementedException();
+            return 1;
         }
     }
 }
