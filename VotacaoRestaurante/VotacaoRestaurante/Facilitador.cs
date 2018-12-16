@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace VotacaoRestaurante
 {
@@ -16,16 +17,15 @@ namespace VotacaoRestaurante
 
         public void AdicionarNovoRestauranteParaVoto(Restaurante restaurante)
         {
-            if (restaurantes.Count == 0)
-            {
-                restaurantes.Add(restaurante);
-            }
-            else
-            {
+            ValidarRestauranteExisteNoCadastro(restaurante);
+
+            restaurantes.Add(restaurante);
+        }
+
+        private void ValidarRestauranteExisteNoCadastro(Restaurante restaurante)
+        {
+            if (restaurantes.Count(restauranteNaLista => restauranteNaLista.Nome.Equals(restaurante.Nome)) > 0)
                 throw new InvalidOperationException();
-            }
-
-
         }
 
         public int QuantidadeRestaurantesCadastrados()

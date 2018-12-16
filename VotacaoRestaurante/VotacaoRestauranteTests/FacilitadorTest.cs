@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using VotacaoRestaurante;
 
 namespace VotacaoRestauranteTests
@@ -7,37 +7,40 @@ namespace VotacaoRestauranteTests
     [TestClass]
     public class FacilitadorTest
     {
-        private ProfissionalFaminto profissional;
-        private Facilitador facilitador;
-        private Restaurante restaurante;
+        private ProfissionalFaminto _profissional;
+        private Facilitador _facilitador;
+        private Restaurante _restaurante;
+        private Restaurante _restaurante2;
 
         [TestInitialize]
         public void DevePrepararOsTestesParaOFacilitador()
         {
-            profissional = new ProfissionalFaminto("Hikari Sakamoto");
-            facilitador = new Facilitador(profissional);
-            restaurante = new Restaurante("Me Gusta");
+            _profissional = new ProfissionalFaminto("Hikari Sakamoto");
+            _facilitador = new Facilitador(_profissional);
+            _restaurante = new Restaurante("Me Gusta");
+            _restaurante2 = new Restaurante("Madero");
 
         }
 
         [TestMethod]
         public void DeveCriarUmFacilitador()
         {
-            Assert.AreEqual(profissional, facilitador.ProfissionalFacilitador);
+            Assert.AreEqual(_profissional, _facilitador.ProfissionalFacilitador);
         }
 
         [TestMethod]
         public void DeveReceberUmRestauranteParaCadastro()
         {
-            facilitador.AdicionarNovoRestauranteParaVoto(restaurante);
-            Assert.AreEqual(1, facilitador.QuantidadeRestaurantesCadastrados());
+            _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante);
+            Assert.AreEqual(1, _facilitador.QuantidadeRestaurantesCadastrados());
         }
 
         [TestMethod]
         public void NaoDevePermitirCadastrarUmRestauranteJaCadastrado()
         {
-            facilitador.AdicionarNovoRestauranteParaVoto(restaurante);
-            Assert.ThrowsException<InvalidOperationException>(() => facilitador.AdicionarNovoRestauranteParaVoto(restaurante));
+            _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante);
+            _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante2);
+            Assert.ThrowsException<InvalidOperationException>(() => _facilitador.AdicionarNovoRestauranteParaVoto(_restaurante));
         }
 
 
