@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace VotacaoRestaurante
 {
@@ -15,7 +16,16 @@ namespace VotacaoRestaurante
 
         public void AdicionarNovoRestauranteParaVoto(Restaurante restaurante)
         {
-            restaurantes.Add(restaurante);
+            if (restaurantes.Count == 0)
+            {
+                restaurantes.Add(restaurante);
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
+
+
         }
 
         public int QuantidadeRestaurantesCadastrados()

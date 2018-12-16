@@ -36,6 +36,7 @@ namespace VotacaoRestauranteTests
         [TestMethod]
         public void NaoDevePermitirCadastrarUmRestauranteJaCadastrado()
         {
+            facilitador.AdicionarNovoRestauranteParaVoto(restaurante);
             Assert.ThrowsException<InvalidOperationException>(() => facilitador.AdicionarNovoRestauranteParaVoto(restaurante));
         }
 
