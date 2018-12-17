@@ -3,6 +3,8 @@ using VotacaoRestaurante;
 
 namespace VotacaoRestauranteTests
 {
+    using System;
+
     [TestClass]
     public class FacilitadorTests
     {
@@ -48,11 +50,12 @@ namespace VotacaoRestauranteTests
         }
 
         [TestMethod]
-        public void DevePermitirUmProfissionalFamintoFazerUmVotoParaUmRestaurante()
+        public void DevePermitirUmProfissionalFamintoFazerUmVotoParaUmRestauranteApenas()
         {
             facilitador.AdicionarProfissional("Pedro");
             facilitador.AdicionarRestaurante(meGusta);
-            Assert.IsTrue(facilitador.ReceberVoto("Pedro", meGusta));
+            facilitador.ReceberVoto("PEDRO", meGusta);
+            Assert.ThrowsException<InvalidOperationException>(() => facilitador.ReceberVoto("PEDRO", meGusta));
         }
     }
 }
