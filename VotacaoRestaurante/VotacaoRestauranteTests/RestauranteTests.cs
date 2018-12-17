@@ -1,4 +1,6 @@
-﻿namespace VotacaoRestauranteTests
+﻿using System;
+
+namespace VotacaoRestauranteTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -7,11 +9,25 @@
     [TestClass]
     public class RestauranteTests
     {
+        private Restaurante restaurante;    
+
+        [TestInitialize]
+        public void DevePrepararOsTestesParaORestaurante()
+        {
+            restaurante = new Restaurante("Me Gusta");
+        }
+
         [TestMethod]
         public void DeveCriarUmNovoRestaurante()
         {
-            Restaurante restaurante = new Restaurante("Me Gusta");
             Assert.AreEqual("Me Gusta", restaurante.Nome);
+        }
+
+        [TestMethod]
+        public void DeveTestarSeDoisRestaurantesSaoIguais()
+        {
+            Restaurante restaurante2 = new Restaurante("Me Gusta");
+            Assert.IsTrue(restaurante.Equals(restaurante2));
         }
     }
 }
