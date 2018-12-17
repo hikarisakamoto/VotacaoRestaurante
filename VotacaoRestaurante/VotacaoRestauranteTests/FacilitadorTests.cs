@@ -16,7 +16,7 @@ namespace VotacaoRestauranteTests
         {
             meGusta = "ME GUSTA";
             madero = "MADERO";
-            facilitador = new Facilitador("Hikari Sakamoto");
+            facilitador = new Facilitador("HIKARI SAKAMOTO");
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace VotacaoRestauranteTests
         [TestMethod]
         public void DevePermitirUmProfissionalFamintoFazerUmVotoParaUmRestauranteApenas()
         {
-            facilitador.AdicionarProfissional("Pedro");
+            facilitador.AdicionarProfissional("PEDRO");
             facilitador.AdicionarRestaurante(meGusta);
             facilitador.ReceberVoto("PEDRO", meGusta);
             Assert.ThrowsException<InvalidOperationException>(() => facilitador.ReceberVoto("PEDRO", meGusta));
@@ -70,11 +70,25 @@ namespace VotacaoRestauranteTests
         public void NaoPermitirQueUmRestauranteGanheDuasVezes()
         {
             PrepararVotacaoRestaurante();
-            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
-            facilitador.AdicionarRestaurante("Japesca");
-            facilitador.ReceberVoto("Pedro", "Japesca");
+            facilitador.DeclararRestauranteVencedorDoDia();
+            facilitador.AdicionarRestaurante("JAPESCA");
+            facilitador.ReceberVoto("Pedro", "JAPESCA");
             Assert.IsTrue(madero.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
         }
+
+        [TestMethod]
+        public void DeveFinalizarASemanaEPermitirVotarNosMesmosRestaurantes()
+        {
+            PrepararVotacaoRestaurante();
+            facilitador.DeclararRestauranteVencedorDoDia();
+            facilitador.AdicionarRestaurante("JAPESCA");
+            facilitador.ReceberVoto("Pedro", "JAPESCA");
+            facilitador.DeclararRestauranteVencedorDoDia();
+            facilitador.FecharVotacoesDaSemana();
+            PrepararVotacaoParaRestaurantes();
+            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+        }
+
 
         private void PrepararVotacaoRestaurante()
         {
@@ -87,6 +101,11 @@ namespace VotacaoRestauranteTests
             facilitador.AdicionarRestaurante(meGusta);
             facilitador.AdicionarRestaurante(madero);
 
+            PrepararVotacaoParaRestaurantes();
+        }
+
+        private void PrepararVotacaoParaRestaurantes()
+        {
             facilitador.ReceberVoto("Pedro", meGusta);
             facilitador.ReceberVoto("Bruno", meGusta);
             facilitador.ReceberVoto("João", meGusta);

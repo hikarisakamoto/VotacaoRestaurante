@@ -15,7 +15,7 @@ namespace VotacaoRestaurante
 
         public Facilitador(string nomeFacilitador)
         {
-            Nome = nomeFacilitador.ToUpper();
+            Nome = nomeFacilitador;
             restaurantesNumeroVotosDictionary = new Dictionary<string, int>();
             profissionalVotoUsadoDictionary = new Dictionary<string, bool>();
             restaurantesJaVisitadosNaSemana = new HashSet<string>();
@@ -23,24 +23,29 @@ namespace VotacaoRestaurante
 
         public bool AdicionarRestaurante(string nomeRestaurante)
         {
-            return restaurantesNumeroVotosDictionary.TryAdd(nomeRestaurante.ToUpper(), 0);
+            return !restaurantesJaVisitadosNaSemana.Contains(nomeRestaurante)
+                   && restaurantesNumeroVotosDictionary.TryAdd(nomeRestaurante, 0);
         }
 
         public bool AdicionarProfissional(string nomeProfissionalFaminto)
         {
-            return profissionalVotoUsadoDictionary.TryAdd(nomeProfissionalFaminto.ToUpper(), false);
+            return profissionalVotoUsadoDictionary.TryAdd(nomeProfissionalFaminto, false);
         }
 
         public void ReceberVoto(string nomeProfissionalFaminto, string nomeRestaurante)
         {
-            if (ValidarProfissional(nomeProfissionalFaminto.ToUpper()) && ValidarRestaurante(nomeRestaurante))
+            if (!ValidarProfissional(nomeProfissionalFaminto))
             {
-                AtualizarVotoProfissionalNoDia(nomeProfissionalFaminto.ToUpper());
-                AdicionarVotoParaRestaurante(nomeRestaurante);
-                return;
+                throw new InvalidOperationException();
             }
 
-            throw new InvalidOperationException();
+            if (!ValidarRestaurante(nomeRestaurante))
+            {
+                throw new InvalidOperationException();
+            }
+
+            AtualizarVotoProfissionalNoDia(nomeProfissionalFaminto);
+            AdicionarVotoParaRestaurante(nomeRestaurante);
         }
 
         private void AdicionarVotoParaRestaurante(string nomeRestaurante)
@@ -98,6 +103,11 @@ namespace VotacaoRestaurante
                     (restaurante1, restaurante2) =>
                         restaurante1.Value > restaurante2.Value ? restaurante1 : restaurante2)
                 .Key;
+        }
+
+        public void FecharVotacoesDaSemana()
+        {
+            throw new NotImplementedException();
         }
     }
 }
