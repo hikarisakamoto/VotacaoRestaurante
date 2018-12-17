@@ -6,11 +6,13 @@ namespace VotacaoRestaurante
     {
         public string Nome { get; }
         private Dictionary<Restaurante, int> restaurantesVotosDictionary;
+        private Dictionary<string, bool> profissionalVotoDictionary;
 
         public Facilitador(string nomeFacilitador)
         {
             Nome = nomeFacilitador.ToUpper();
             restaurantesVotosDictionary = new Dictionary<Restaurante, int>();
+            profissionalVotoDictionary = new Dictionary<string, bool>();
         }
 
         public bool AdicionarRestaurante(Restaurante restaurante)
@@ -20,7 +22,7 @@ namespace VotacaoRestaurante
 
         public bool AdicionarProfissional(string nomeProfissionalFaminto)
         {
-            throw new System.NotImplementedException();
+            return profissionalVotoDictionary.TryAdd(nomeProfissionalFaminto, false);
         }
     }
 }
