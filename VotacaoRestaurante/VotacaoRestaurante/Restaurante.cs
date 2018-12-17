@@ -8,5 +8,10 @@
         {
             Nome = nomeRestaurante;
         }
+
+        public override bool Equals(object obj)
+        {
+            return true;
+        }
     }
 }
