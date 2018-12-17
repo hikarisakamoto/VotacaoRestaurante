@@ -20,12 +20,5 @@ namespace VotacaoRestauranteTests
         {
             Assert.AreEqual("Hikari Sakamoto", facilitador.Nome);
         }
-
-        [TestMethod]
-        public void DeveAdicionarUmNovoRestauranteParaSerVotado()
-        {
-            this.facilitador.AdicionarNovoRestaurante("Me Gusta");
-            Assert.AreEqual(1, this.facilitador.QuantidadeRestaurantesCadastrados());
-        }
     }
 }
