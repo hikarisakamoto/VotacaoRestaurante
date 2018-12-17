@@ -25,7 +25,6 @@ namespace VotacaoRestauranteTests
         {
             Restaurante restaurante = new Restaurante("Me Gusta");
             Assert.IsTrue(facilitador.AdicionarRestaurante(restaurante));
-
         }
 
     }

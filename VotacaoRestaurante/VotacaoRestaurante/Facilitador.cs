@@ -1,7 +1,5 @@
 ﻿namespace VotacaoRestaurante
 {
-    using System.Collections.Generic;
-
     public class Facilitador
     {
         public string Nome { get; }
@@ -14,7 +12,7 @@
 
         public bool AdicionarRestaurante(Restaurante restaurante)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
     }
 }
