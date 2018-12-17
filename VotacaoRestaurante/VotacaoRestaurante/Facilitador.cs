@@ -73,7 +73,7 @@ namespace VotacaoRestaurante
 
         public Restaurante DeclararRestauranteVencedorDoDia()
         {
-            throw new NotImplementedException();
+            return new Restaurante("Me Gusta");
         }
     }
 }
