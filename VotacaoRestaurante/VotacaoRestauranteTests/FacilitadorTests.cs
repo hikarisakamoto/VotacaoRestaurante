@@ -57,5 +57,27 @@ namespace VotacaoRestauranteTests
             facilitador.ReceberVoto("PEDRO", meGusta);
             Assert.ThrowsException<InvalidOperationException>(() => facilitador.ReceberVoto("PEDRO", meGusta));
         }
+
+        [TestMethod]
+        public void DeveDeclararORestauranteGanhadorDoDia()
+        {
+            facilitador.AdicionarProfissional("Pedro");
+            facilitador.AdicionarProfissional("Bruno");
+            facilitador.AdicionarProfissional("João");
+            facilitador.AdicionarProfissional("Mário");
+            facilitador.AdicionarProfissional("Lucas");
+
+            facilitador.AdicionarRestaurante(meGusta);
+            facilitador.AdicionarRestaurante(madero);
+
+            facilitador.ReceberVoto("Pedro", meGusta);
+            facilitador.ReceberVoto("Bruno", meGusta);
+            facilitador.ReceberVoto("João", meGusta);
+            facilitador.ReceberVoto("Lucas", madero);
+            facilitador.ReceberVoto("Mário", madero);
+
+            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+
+        }
     }
 }

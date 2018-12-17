@@ -30,9 +30,9 @@ namespace VotacaoRestaurante
 
         public void ReceberVoto(string nomeProfissionalFaminto, Restaurante restaurante)
         {
-            if (ValidarProfissional(nomeProfissionalFaminto) && ValidarRestaurante(restaurante))
+            if (ValidarProfissional(nomeProfissionalFaminto.ToUpper()) && ValidarRestaurante(restaurante))
             {
-                AtualizarVotoProfissionalNoDia(nomeProfissionalFaminto);
+                AtualizarVotoProfissionalNoDia(nomeProfissionalFaminto.ToUpper());
                 AdicionarVotoParaRestaurante(restaurante);
                 return;
             }
@@ -69,6 +69,11 @@ namespace VotacaoRestaurante
         private bool ValidaProfissionalEstaAptoVotarNoDia(string nomeProfissionalFaminto)
         {
             return !profissionalVotoUsadoDictionary[nomeProfissionalFaminto];
+        }
+
+        public Restaurante DeclararRestauranteVencedorDoDia()
+        {
+            throw new NotImplementedException();
         }
     }
 }
