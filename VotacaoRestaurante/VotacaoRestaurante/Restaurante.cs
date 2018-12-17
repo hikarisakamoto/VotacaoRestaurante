@@ -6,7 +6,7 @@
 
         public Restaurante(string nomeRestaurante)
         {
-            Nome = nomeRestaurante;
+            Nome = nomeRestaurante.ToUpper();
         }
 
         public override bool Equals(object restaurante)

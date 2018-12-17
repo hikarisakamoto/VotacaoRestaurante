@@ -21,7 +21,7 @@ namespace VotacaoRestauranteTests
         [TestMethod]
         public void DeveCriarUmNovoRestaurante()
         {
-            Assert.AreEqual("Me Gusta", restaurante.Nome);
+            Assert.AreEqual("ME GUSTA", restaurante.Nome);
         }
 
         [TestMethod]
