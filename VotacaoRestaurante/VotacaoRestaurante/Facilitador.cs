@@ -22,7 +22,7 @@ namespace VotacaoRestaurante
 
         public bool AdicionarProfissional(string nomeProfissionalFaminto)
         {
-            return profissionalVotoDictionary.TryAdd(nomeProfissionalFaminto, false);
+            return profissionalVotoDictionary.TryAdd(nomeProfissionalFaminto.ToUpper(), false);
         }
     }
 }
