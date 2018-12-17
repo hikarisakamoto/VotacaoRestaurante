@@ -24,5 +24,10 @@ namespace VotacaoRestaurante
         {
             return profissionalVotoDictionary.TryAdd(nomeProfissionalFaminto.ToUpper(), false);
         }
+
+        public bool ReceberVoto(string pedro, Restaurante meGusta)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -46,5 +46,13 @@ namespace VotacaoRestauranteTests
             Assert.IsTrue(facilitador.AdicionarProfissional("Bruno"));
             Assert.IsFalse(facilitador.AdicionarProfissional("Pedro"));
         }
+
+        [TestMethod]
+        public void DevePermitirUmProfissionalFamintoFazerUmVotoParaUmRestaurante()
+        {
+            facilitador.AdicionarProfissional("Pedro");
+            facilitador.AdicionarRestaurante(meGusta);
+            Assert.IsTrue(facilitador.ReceberVoto("Pedro", meGusta));
+        }
     }
 }
