@@ -21,10 +21,13 @@ namespace VotacaoRestauranteTests
 
 
         [TestMethod]
-        public void DeveAdicionarUmNovoRestauranteParaVotoComSucesso()
+        public void DeveAdicionarRestaurantesNovosParaVotoComSucesso()
         {
-            Restaurante restaurante = new Restaurante("Me Gusta");
-            Assert.IsTrue(facilitador.AdicionarRestaurante(restaurante));
+            Restaurante meGusta = new Restaurante("Me Gusta");
+            Restaurante madero = new Restaurante("Madero");
+
+            Assert.IsTrue(facilitador.AdicionarRestaurante(meGusta));
+            Assert.IsTrue(facilitador.AdicionarRestaurante(madero));
         }
 
     }
