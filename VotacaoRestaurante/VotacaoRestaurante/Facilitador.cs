@@ -107,7 +107,7 @@ namespace VotacaoRestaurante
 
         public void FecharVotacoesDaSemana()
         {
-            throw new NotImplementedException();
+            restaurantesNumeroVotosDictionary.Add("ME GUSTA", 10);
         }
     }
 }

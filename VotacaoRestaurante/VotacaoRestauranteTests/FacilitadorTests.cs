@@ -81,9 +81,6 @@ namespace VotacaoRestauranteTests
         {
             PrepararVotacaoRestaurante();
             facilitador.DeclararRestauranteVencedorDoDia();
-            facilitador.AdicionarRestaurante("JAPESCA");
-            facilitador.ReceberVoto("Pedro", "JAPESCA");
-            facilitador.DeclararRestauranteVencedorDoDia();
             facilitador.FecharVotacoesDaSemana();
             PrepararVotacaoParaRestaurantes();
             Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
