@@ -12,13 +12,21 @@ namespace VotacaoRestauranteTests
         {
             facilitador = new Facilitador("Hikari Sakamoto");
         }
-        /// <summary>
-        /// Deve criar um novo facilitador.
-        /// </summary>
+
         [TestMethod]
         public void DeveCriarUmNovoFacilitador()
         {
             Assert.AreEqual("Hikari Sakamoto", facilitador.Nome);
         }
+
+
+        [TestMethod]
+        public void DeveAdicionarUmNovoRestauranteParaVotoComSucesso()
+        {
+            Restaurante restaurante = new Restaurante("Me Gusta");
+            Assert.IsTrue(facilitador.AdicionarRestaurante(restaurante));
+
+        }
+
     }
 }

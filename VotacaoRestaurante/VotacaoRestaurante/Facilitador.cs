@@ -11,5 +11,10 @@
         {
             Nome = nomeFacilitador;
         }
+
+        public bool AdicionarRestaurante(Restaurante restaurante)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
