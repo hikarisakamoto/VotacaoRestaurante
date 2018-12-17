@@ -81,12 +81,31 @@ namespace VotacaoRestaurante
 
         public string DeclararRestauranteVencedorDoDia()
         {
-            AtualizarVotosDosProfissionais();
-
             string restauranteVencedor = RetornarRestauranteComMaisVotosNoDia();
+            FazerManutencaoDosVotosDoDia(restauranteVencedor);
+            return restauranteVencedor;
+        }
+
+        private void FazerManutencaoDosVotosDoDia(string restauranteVencedor)
+        {
+            AtualizarVotosDosProfissionais();
+            AtualizarRelacaoRestaurantes(restauranteVencedor);
+            AtualizarNumeroVotosRestaurante();
+        }
+
+        private void AtualizarNumeroVotosRestaurante()
+        {
+            foreach (string restaurante in restaurantesNumeroVotosDictionary.Keys.ToList())
+            {
+                restaurantesNumeroVotosDictionary[restaurante] = 0;
+            }
+        }
+
+        private void AtualizarRelacaoRestaurantes(string restauranteVencedor)
+        {
+
             restaurantesNumeroVotosDictionary.Remove(restauranteVencedor);
             restaurantesJaVisitadosNaSemana.Add(restauranteVencedor);
-            return restauranteVencedor;
         }
 
         private void AtualizarVotosDosProfissionais()
@@ -107,7 +126,22 @@ namespace VotacaoRestaurante
 
         public void FecharVotacoesDaSemana()
         {
-            restaurantesNumeroVotosDictionary.Add("ME GUSTA", 10);
+            AdicionarRestaurantesVisitadosNaSemanaParaVotacao();
+
+            LimparListaRestaurentesVisitadosNaSemana();
+        }
+
+        private void LimparListaRestaurentesVisitadosNaSemana()
+        {
+            restaurantesJaVisitadosNaSemana = new HashSet<string>();
+        }
+
+        private void AdicionarRestaurantesVisitadosNaSemanaParaVotacao()
+        {
+            foreach (string nomeRestaurante in restaurantesJaVisitadosNaSemana)
+            {
+                restaurantesNumeroVotosDictionary.Add(nomeRestaurante, 0);
+            }
         }
     }
 }
