@@ -3,6 +3,7 @@
 namespace VotacaoRestaurante
 {
     using System;
+    using System.Linq;
 
     public class Facilitador
     {
@@ -73,7 +74,15 @@ namespace VotacaoRestaurante
 
         public Restaurante DeclararRestauranteVencedorDoDia()
         {
-            return new Restaurante("Me Gusta");
+            return RetornarRestauranteComMaisVotosNaSemana();
+        }
+
+        private Restaurante RetornarRestauranteComMaisVotosNaSemana()
+        {
+            return restaurantesNumeroVotosDictionary.Aggregate(
+                    (restaurante1, restaurante2) =>
+                        restaurante1.Value > restaurante2.Value ? restaurante1 : restaurante2)
+                .Key;
         }
     }
 }
