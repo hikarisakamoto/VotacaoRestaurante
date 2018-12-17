@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VotacaoRestauranteTests
 {
@@ -28,6 +29,7 @@ namespace VotacaoRestauranteTests
         {
             Restaurante restaurante2 = new Restaurante("Me Gusta");
             Assert.IsTrue(restaurante.Equals(restaurante2));
+            Assert.AreEqual(restaurante.GetHashCode(), restaurante2.GetHashCode());
         }
     }
 }

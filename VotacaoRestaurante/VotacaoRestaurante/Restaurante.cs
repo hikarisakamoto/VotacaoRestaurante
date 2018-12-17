@@ -9,9 +9,15 @@
             Nome = nomeRestaurante;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object restaurante)
         {
-            return true;
+            Restaurante restauranteComparar = restaurante as Restaurante;
+            return Nome.Equals(restauranteComparar.Nome);
+        }
+
+        public override int GetHashCode()
+        {
+            return Nome.GetHashCode();
         }
     }
 }
