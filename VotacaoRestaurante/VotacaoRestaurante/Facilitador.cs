@@ -27,7 +27,7 @@ namespace VotacaoRestaurante
 
         public bool ReceberVoto(string pedro, Restaurante meGusta)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
     }
 }
