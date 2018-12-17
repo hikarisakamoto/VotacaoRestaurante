@@ -61,6 +61,21 @@ namespace VotacaoRestauranteTests
         [TestMethod]
         public void DeveDeclararORestauranteGanhadorDoDia()
         {
+            PrepararVotacaoRestaurante();
+
+            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+        }
+
+        [TestMethod]
+        public void NaoPermitirQueUmRestauranteGanheDuasVezes()
+        {
+            PrepararVotacaoRestaurante();
+            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+            Assert.IsTrue(madero.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+        }
+
+        private void PrepararVotacaoRestaurante()
+        {
             facilitador.AdicionarProfissional("Pedro");
             facilitador.AdicionarProfissional("Bruno");
             facilitador.AdicionarProfissional("João");
@@ -75,9 +90,6 @@ namespace VotacaoRestauranteTests
             facilitador.ReceberVoto("João", meGusta);
             facilitador.ReceberVoto("Lucas", madero);
             facilitador.ReceberVoto("Mário", madero);
-
-            Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
-
         }
     }
 }

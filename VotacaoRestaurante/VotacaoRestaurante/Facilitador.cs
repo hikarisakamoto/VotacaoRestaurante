@@ -74,10 +74,10 @@ namespace VotacaoRestaurante
 
         public Restaurante DeclararRestauranteVencedorDoDia()
         {
-            return RetornarRestauranteComMaisVotosNaSemana();
+            return RetornarRestauranteComMaisVotosNoDia();
         }
 
-        private Restaurante RetornarRestauranteComMaisVotosNaSemana()
+        private Restaurante RetornarRestauranteComMaisVotosNoDia()
         {
             return restaurantesNumeroVotosDictionary.Aggregate(
                     (restaurante1, restaurante2) =>
