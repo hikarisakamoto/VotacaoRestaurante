@@ -9,19 +9,21 @@ namespace VotacaoRestaurante
     {
         public string Nome { get; }
 
-        private Dictionary<Restaurante, int> restaurantesNumeroVotosDictionary;
+        private Dictionary<string, int> restaurantesNumeroVotosDictionary;
+        private HashSet<string> restaurantesJaVisitadosNaSemana;
         private Dictionary<string, bool> profissionalVotoUsadoDictionary;
 
         public Facilitador(string nomeFacilitador)
         {
             Nome = nomeFacilitador.ToUpper();
-            restaurantesNumeroVotosDictionary = new Dictionary<Restaurante, int>();
+            restaurantesNumeroVotosDictionary = new Dictionary<string, int>();
             profissionalVotoUsadoDictionary = new Dictionary<string, bool>();
+            restaurantesJaVisitadosNaSemana = new HashSet<string>();
         }
 
-        public bool AdicionarRestaurante(Restaurante restaurante)
+        public bool AdicionarRestaurante(string nomeRestaurante)
         {
-            return restaurantesNumeroVotosDictionary.TryAdd(restaurante, 0);
+            return restaurantesNumeroVotosDictionary.TryAdd(nomeRestaurante.ToUpper(), 0);
         }
 
         public bool AdicionarProfissional(string nomeProfissionalFaminto)
@@ -29,21 +31,21 @@ namespace VotacaoRestaurante
             return profissionalVotoUsadoDictionary.TryAdd(nomeProfissionalFaminto.ToUpper(), false);
         }
 
-        public void ReceberVoto(string nomeProfissionalFaminto, Restaurante restaurante)
+        public void ReceberVoto(string nomeProfissionalFaminto, string nomeRestaurante)
         {
-            if (ValidarProfissional(nomeProfissionalFaminto.ToUpper()) && ValidarRestaurante(restaurante))
+            if (ValidarProfissional(nomeProfissionalFaminto.ToUpper()) && ValidarRestaurante(nomeRestaurante))
             {
                 AtualizarVotoProfissionalNoDia(nomeProfissionalFaminto.ToUpper());
-                AdicionarVotoParaRestaurante(restaurante);
+                AdicionarVotoParaRestaurante(nomeRestaurante);
                 return;
             }
 
             throw new InvalidOperationException();
         }
 
-        private void AdicionarVotoParaRestaurante(Restaurante restaurante)
+        private void AdicionarVotoParaRestaurante(string nomeRestaurante)
         {
-            restaurantesNumeroVotosDictionary[restaurante] = restaurantesNumeroVotosDictionary[restaurante] + 1;
+            restaurantesNumeroVotosDictionary[nomeRestaurante] = restaurantesNumeroVotosDictionary[nomeRestaurante] + 1;
         }
 
         private void AtualizarVotoProfissionalNoDia(string nomeProfissionalFaminto)
@@ -51,9 +53,9 @@ namespace VotacaoRestaurante
             profissionalVotoUsadoDictionary[nomeProfissionalFaminto] = true;
         }
 
-        private bool ValidarRestaurante(Restaurante restaurante)
+        private bool ValidarRestaurante(string nomeRestaurante)
         {
-            return restaurantesNumeroVotosDictionary.ContainsKey(restaurante);
+            return restaurantesNumeroVotosDictionary.ContainsKey(nomeRestaurante);
         }
 
         private bool ValidarProfissional(string nomeProfissionalFaminto)
@@ -72,14 +74,25 @@ namespace VotacaoRestaurante
             return !profissionalVotoUsadoDictionary[nomeProfissionalFaminto];
         }
 
-        public Restaurante DeclararRestauranteVencedorDoDia()
+        public string DeclararRestauranteVencedorDoDia()
         {
-            Restaurante restauranteVencedor = RetornarRestauranteComMaisVotosNoDia();
+            AtualizarVotosDosProfissionais();
+
+            string restauranteVencedor = RetornarRestauranteComMaisVotosNoDia();
             restaurantesNumeroVotosDictionary.Remove(restauranteVencedor);
+            restaurantesJaVisitadosNaSemana.Add(restauranteVencedor);
             return restauranteVencedor;
         }
 
-        private Restaurante RetornarRestauranteComMaisVotosNoDia()
+        private void AtualizarVotosDosProfissionais()
+        {
+            foreach (string key in profissionalVotoUsadoDictionary.Keys.ToList())
+            {
+                profissionalVotoUsadoDictionary[key] = false;
+            }
+        }
+
+        private string RetornarRestauranteComMaisVotosNoDia()
         {
             return restaurantesNumeroVotosDictionary.Aggregate(
                     (restaurante1, restaurante2) =>

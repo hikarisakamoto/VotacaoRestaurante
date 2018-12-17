@@ -9,13 +9,13 @@ namespace VotacaoRestauranteTests
     public class FacilitadorTests
     {
         private Facilitador facilitador;
-        private Restaurante meGusta;
-        private Restaurante madero;
+        private string meGusta;
+        private string madero;
         [TestInitialize]
         public void DevePrepararOsTestesDoFacilitador()
         {
-            meGusta = new Restaurante("Me Gusta");
-            madero = new Restaurante("Madero");
+            meGusta = "ME GUSTA";
+            madero = "MADERO";
             facilitador = new Facilitador("Hikari Sakamoto");
         }
 
@@ -71,6 +71,8 @@ namespace VotacaoRestauranteTests
         {
             PrepararVotacaoRestaurante();
             Assert.IsTrue(meGusta.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
+            facilitador.AdicionarRestaurante("Japesca");
+            facilitador.ReceberVoto("Pedro", "Japesca");
             Assert.IsTrue(madero.Equals(facilitador.DeclararRestauranteVencedorDoDia()));
         }
 
