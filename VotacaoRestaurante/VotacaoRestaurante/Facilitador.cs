@@ -74,7 +74,9 @@ namespace VotacaoRestaurante
 
         public Restaurante DeclararRestauranteVencedorDoDia()
         {
-            return RetornarRestauranteComMaisVotosNoDia();
+            Restaurante restauranteVencedor = RetornarRestauranteComMaisVotosNoDia();
+            restaurantesNumeroVotosDictionary.Remove(restauranteVencedor);
+            return restauranteVencedor;
         }
 
         private Restaurante RetornarRestauranteComMaisVotosNoDia()
