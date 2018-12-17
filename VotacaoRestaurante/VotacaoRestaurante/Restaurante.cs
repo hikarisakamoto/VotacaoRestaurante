@@ -2,11 +2,11 @@
 {
     public class Restaurante
     {
-        public Restaurante(string meGusta)
-        {
-            throw new System.NotImplementedException();
-        }
+        public string Nome { get; }
 
-        public string Nome { get; set; }
+        public Restaurante(string nomeRestaurante)
+        {
+            Nome = nomeRestaurante;
+        }
     }
 }
